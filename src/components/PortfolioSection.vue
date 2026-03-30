@@ -5,13 +5,16 @@
       
       <div class="grid md:grid-cols-3 gap-8">
         <div v-for="project in projects" :key="project.id" class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
-          <div class="h-48 bg-gradient-to-br from-gold to-darkNavy flex items-center justify-center">
-            <span class="text-white text-4xl">{{ project.icon }}</span>
+          <div class="h-48 relative overflow-hidden flex items-center justify-center">
+            <img v-if="project.image" :src="project.image" class="w-full h-full object-cover" :alt="project.title" />
+            <div v-else class="w-full h-full bg-gradient-to-br from-gold to-darkNavy flex items-center justify-center">
+              <span class="text-white text-4xl">{{ project.icon }}</span>
+            </div>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold text-darkNavy mb-2">{{ project.title }}</h3>
             <p class="text-gray-600 mb-4">{{ project.description }}</p>
-            <a href="#" class="text-gold font-semibold hover:underline">Lihat detail →</a>
+            <a href="#" @click.prevent="handleProjectClick(project)" class="text-orange-500 hover:text-orange-600 transition font-semibold hover:underline">Lihat detail →</a>
           </div>
         </div>
       </div>
@@ -20,7 +23,19 @@
 </template>
 
 <script setup>
+import weddingHero from '../assets/Hero-wedding.png'
+
+const emit = defineEmits(['view-demo'])
+
 const projects = [
+  {
+    id: 7,
+    title: 'Digital Wedding Invitation',
+    description: 'Undangan pernikahan online elegan dengan fitur countdown, peta lokasi, dan buku tamu.',
+    icon: '💍',
+    image: weddingHero,
+    isDemo: true
+  },
   {
     id: 1,
     title: 'E-Commerce Platform',
@@ -58,4 +73,10 @@ const projects = [
     icon: '💡'
   }
 ]
+
+const handleProjectClick = (project) => {
+  if (project.isDemo) {
+    emit('view-demo', 'wedding')
+  }
+}
 </script>
