@@ -137,7 +137,7 @@
 
     <!-- Footer -->
     <footer class="bg-darkNavy py-8 text-center text-stone-400 text-sm tracking-[0.2em]">
-      &copy; 2025 ZAHABA - Undangan Pernikahan Digital Elegan
+      &copy; 2026 ZAHABA - Undangan Pernikahan Digital Elegan
     </footer>
     </div>
 </template>

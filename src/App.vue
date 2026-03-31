@@ -5,7 +5,7 @@
     <PortfolioSection @view-demo="navigateToDemo" />
     <ContactSection />
     <footer class="bg-darkNavy text-white py-6 text-center">
-      <p>&copy; 2024 ZAHABA - Jasa Pembuatan Website & Konsultan Teknologi</p>
+      <p>&copy; 2026 ZAHABA - Jasa Pembuatan Website & Konsultan Teknologi</p>
     </footer>
   </div>
 
