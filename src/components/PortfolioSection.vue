@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import weddingHero from '../assets/Hero-wedding.png'
+import weddingHero from '../assets/Hero-wedding.webp'
 
 const emit = defineEmits(['view-demo'])
 

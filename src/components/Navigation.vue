@@ -1,7 +1,7 @@
 <template>
-  <nav class="sticky top-0 bg-gold shadow-md z-50">
+  <nav class="sticky top-0 bg-white shadow-md z-50">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center relative">
-      <h1 class="text-2xl font-bold text-darkNavy">ZAHABA</h1>
+      <img :src="logoZahaba" alt="Zahaba Logo" class="h-8 md:h-10 w-auto" />
       
       <!-- Desktop Menu -->
       <ul class="hidden md:flex gap-8">
@@ -35,6 +35,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import logoZahaba from '../assets/logo_zahaba_trans.webp'
 
 const isMenuOpen = ref(false)
 </script>

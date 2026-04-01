@@ -165,8 +165,8 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 // Pastikan nama file dan ekstensinya (.png atau .jpg) sesuai dengan yang ada di folder src/assets
 // Jika file aslinya adalah .jpg, ganti akhiran di bawah menjadi .jpg
-import weddingHero from '../assets/Hero-wedding.png'
-import weddingHeroMob from '../assets/Hero-wedding-mob.png'
+import weddingHero from '../assets/Hero-wedding.webp'
+import weddingHeroMob from '../assets/Hero-wedding-mob.webp'
 
 const isOpened = ref(false)
 const firstSection = ref(null)
