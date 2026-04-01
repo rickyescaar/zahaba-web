@@ -3,8 +3,13 @@
     <!-- Header Section -->
     <header 
       class="hero relative h-screen flex items-center justify-center text-center bg-stone-200 overflow-hidden"
-      :style="{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${weddingHero})` }"
     >
+      <img 
+        :src="weddingHero" 
+        alt="Wedding Hero" 
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 p-6 backdrop-blur-[2px] rounded-lg border border-gold/30 mx-4 animate-fade-in">
         <p class="text-white text-xl md:text-2xl uppercase tracking-widest mb-4">The Wedding of</p>
         <h1 class="text-5xl md:text-7xl font-light mb-2 text-white">Fulan & Fulanah</h1>
@@ -252,11 +257,28 @@ onUnmounted(() => {
   font-family: 'Playfair Display', serif;
 }
 
-/* Hero Styling untuk memastikan gambar di tengah */
+/* Hero Styling - menggunakan img element dengan object-fit */
 .hero {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Mobile Responsive - fokus ke bagian upper image (couple) */
+@media (max-width: 768px) {
+  .hero img {
+    object-position: center 35%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero img {
+    object-position: center center;
+  }
 }
 
 /* Warna emas kustom sesuai permintaan */
