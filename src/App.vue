@@ -8,7 +8,7 @@
       @click="goHome" 
       class="fixed top-6 left-6 z-[100] bg-darkNavy/80 text-white px-4 py-2 rounded-full backdrop-blur-md border border-gold/50 hover:bg-gold transition shadow-xl"
     >
-      ← Kembali ke Zahaba
+      ← Kembali ke ZAHABA
     </button>
   </div>
 </template>
