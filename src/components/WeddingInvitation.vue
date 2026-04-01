@@ -2,25 +2,25 @@
   <div class="min-h-screen bg-stone-50 font-serif text-darkNavy selection:bg-gold selection:text-white">
     <!-- Header Section -->
     <header 
-      class="hero relative h-screen flex items-center justify-center text-center bg-stone-200 overflow-hidden"
+      class="hero relative flex items-center justify-center text-center bg-stone-200 overflow-hidden min-h-screen md:h-screen"
     >
       <img 
         :src="weddingHero" 
         alt="Wedding Hero" 
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover md:object-center"
       />
       <div class="absolute inset-0 bg-black/50"></div>
-      <div class="relative z-10 p-6 backdrop-blur-[2px] rounded-lg border border-gold/30 mx-4 animate-fade-in">
-        <p class="text-white text-xl md:text-2xl uppercase tracking-widest mb-4">The Wedding of</p>
-        <h1 class="text-5xl md:text-7xl font-light mb-2 text-white">Fulan & Fulanah</h1>
-        <div class="w-24 h-px bg-gold mx-auto my-6"></div>
-        <p class="text-xl md:text-2xl italic bold mb-8 text-white">20 Desember 2025</p>
+      <div class="relative z-10 p-4 md:p-6 backdrop-blur-[2px] rounded-lg border border-gold/30 mx-4 animate-fade-in max-w-2xl">
+        <p class="text-white text-base md:text-2xl uppercase tracking-widest mb-2 md:mb-4">The Wedding of</p>
+        <h1 class="text-3xl md:text-7xl font-light mb-1 md:mb-2 text-white">Fulan & Fulanah</h1>
+        <div class="w-16 md:w-24 h-px bg-gold mx-auto my-3 md:my-6"></div>
+        <p class="text-base md:text-2xl italic bold mb-4 md:mb-8 text-white">20 Desember 2025</p>
         
         <!-- Tombol Buka Undangan -->
         <button 
           v-if="!isOpened"
           @click="openInvitation"
-          class="bg-gold text-white px-8 py-3 rounded-full hover:bg-darkNavy transition-all duration-500 tracking-widest uppercase text-sm shadow-lg hover:scale-105"
+          class="bg-gold text-white px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-darkNavy transition-all duration-500 tracking-widest uppercase text-xs md:text-sm shadow-lg hover:scale-105"
         >
           Buka Undangan
         </button>
@@ -257,7 +257,7 @@ onUnmounted(() => {
   font-family: 'Playfair Display', serif;
 }
 
-/* Hero Styling - menggunakan img element dengan object-fit */
+/* Hero Styling - Image dengan better mobile support */
 .hero {
   position: relative;
 }
@@ -267,15 +267,21 @@ onUnmounted(() => {
   object-position: center;
 }
 
-/* Mobile Responsive - fokus ke bagian upper image (couple) */
-@media (max-width: 768px) {
+/* Mobile: Skalakan lebih besar agar couple lebih terlihat dan frame terfokus ke bagian atas */
+@media (max-width: 767px) {
+  .hero {
+    min-height: screen;
+  }
+  
   .hero img {
-    object-position: center 35%;
+    object-position: center top;
+    scale: 1.3;
+    transform: translateY(-10%);
   }
 }
 
-/* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Desktop: Normal positioning */
+@media (min-width: 768px) {
   .hero img {
     object-position: center center;
   }
