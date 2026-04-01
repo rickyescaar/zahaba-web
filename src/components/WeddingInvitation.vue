@@ -4,11 +4,20 @@
     <header 
       class="hero relative flex items-center justify-center text-center bg-stone-200 overflow-hidden min-h-screen md:h-screen"
     >
+      <!-- Mobile Image -->
+      <img 
+        :src="weddingHeroMob" 
+        alt="Wedding Hero" 
+        class="absolute inset-0 w-full h-full object-cover block md:hidden"
+      />
+      
+      <!-- Desktop Image -->
       <img 
         :src="weddingHero" 
         alt="Wedding Hero" 
-        class="absolute inset-0 w-full h-full object-cover md:object-center"
+        class="absolute inset-0 w-full h-full object-cover hidden md:block"
       />
+      
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="relative z-10 p-4 md:p-6 backdrop-blur-[2px] rounded-lg border border-gold/30 mx-4 animate-fade-in max-w-2xl">
         <p class="text-white text-base md:text-2xl uppercase tracking-widest mb-2 md:mb-4">The Wedding of</p>
@@ -153,6 +162,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 // Pastikan nama file dan ekstensinya (.png atau .jpg) sesuai dengan yang ada di folder src/assets
 // Jika file aslinya adalah .jpg, ganti akhiran di bawah menjadi .jpg
 import weddingHero from '../assets/Hero-wedding.png'
+import weddingHeroMob from '../assets/Hero-wedding-mob.png'
 
 const isOpened = ref(false)
 const firstSection = ref(null)
@@ -257,7 +267,7 @@ onUnmounted(() => {
   font-family: 'Playfair Display', serif;
 }
 
-/* Hero Styling - Image dengan better mobile support */
+/* Hero Styling - Dual Images untuk Mobile dan Desktop */
 .hero {
   position: relative;
 }
@@ -267,22 +277,16 @@ onUnmounted(() => {
   object-position: center;
 }
 
-/* Mobile: Skalakan lebih besar agar couple lebih terlihat dan frame terfokus ke bagian atas */
+/* Mobile image - sudah di-crop optimal sebelumnya */
 @media (max-width: 767px) {
-  .hero {
-    min-height: screen;
-  }
-  
-  .hero img {
-    object-position: center top;
-    scale: 1.3;
-    transform: translateY(-10%);
+  .hero img.block {
+    object-position: center center;
   }
 }
 
-/* Desktop: Normal positioning */
+/* Desktop image - full centered */
 @media (min-width: 768px) {
-  .hero img {
+  .hero img.hidden {
     object-position: center center;
   }
 }
