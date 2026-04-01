@@ -5,9 +5,9 @@
       
       <div class="grid md:grid-cols-3 gap-8">
         <div v-for="project in projects" :key="project.id" class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
-          <div class="h-48 relative overflow-hidden flex items-center justify-center">
-            <img v-if="project.image" :src="project.image" class="w-full h-full object-cover" :alt="project.title" />
-            <div v-else class="w-full h-full bg-gradient-to-br from-gold to-darkNavy flex items-center justify-center">
+          <div class="h-48 relative overflow-hidden flex items-center justify-center cursor-pointer group" @click="handleProjectClick(project)">
+            <img v-if="project.image" :src="project.image" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" :alt="project.title" />
+            <div v-else class="w-full h-full bg-gradient-to-br from-gold to-darkNavy flex items-center justify-center group-hover:scale-105 transition duration-300">
               <span class="text-white text-4xl">{{ project.icon }}</span>
             </div>
           </div>
