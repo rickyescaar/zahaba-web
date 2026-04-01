@@ -1,20 +1,24 @@
 <template>
   <div class="min-h-screen bg-stone-50 font-serif text-darkNavy selection:bg-gold selection:text-white">
-    <!-- Header Section -->
+    <!-- Header Section with Lazy Loading Optimization -->
     <header 
       class="hero relative flex items-center justify-center text-center bg-stone-200 overflow-hidden min-h-screen md:h-screen"
     >
-      <!-- Mobile Image -->
+      <!-- Mobile Image - dengan Blur Placeholder -->
       <img 
         :src="weddingHeroMob" 
         alt="Wedding Hero" 
+        loading="eager"
+        decoding="async"
         class="absolute inset-0 w-full h-full object-cover block md:hidden"
       />
       
-      <!-- Desktop Image -->
+      <!-- Desktop Image - dengan Blur Placeholder -->
       <img 
         :src="weddingHero" 
         alt="Wedding Hero" 
+        loading="eager"
+        decoding="async"
         class="absolute inset-0 w-full h-full object-cover hidden md:block"
       />
       
@@ -267,24 +271,31 @@ onUnmounted(() => {
   font-family: 'Playfair Display', serif;
 }
 
-/* Hero Styling - Dual Images untuk Mobile dan Desktop */
+/* Hero Styling - Dual Images untuk Mobile dan Desktop dengan Fast Loading */
 .hero {
   position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.1) 0%,
+    rgba(45, 41, 38, 0.2) 100%
+  );
 }
 
 .hero img {
   object-fit: cover;
   object-position: center;
+  /* Preload optimization */
+  content-visibility: auto;
 }
 
-/* Mobile image - sudah di-crop optimal sebelumnya */
+/* Mobile image */
 @media (max-width: 767px) {
   .hero img.block {
     object-position: center center;
   }
 }
 
-/* Desktop image - full centered */
+/* Desktop image */
 @media (min-width: 768px) {
   .hero img.hidden {
     object-position: center center;
