@@ -8,6 +8,7 @@
         <li><a href="#hero" class="text-darkNavy hover:text-white transition">Beranda</a></li>
         <li><a href="#portfolio" class="text-darkNavy hover:text-white transition">Portfolio</a></li>
         <li><a href="#contact" class="text-darkNavy hover:text-white transition">Kontak</a></li>
+        <li><a href="https://zahaba.my.id/ebook" class="text-darkNavy hover:text-white transition">Ebook</a></li>
       </ul>
 
       <!-- Mobile Menu Button -->
@@ -27,6 +28,7 @@
           <li><a href="#hero" @click="isMenuOpen = false" class="text-darkNavy font-semibold hover:text-white transition block">Beranda</a></li>
           <li><a href="#portfolio" @click="isMenuOpen = false" class="text-darkNavy font-semibold hover:text-white transition block">Portfolio</a></li>
           <li><a href="#contact" @click="isMenuOpen = false" class="text-darkNavy font-semibold hover:text-white transition block">Kontak</a></li>
+          <li><a href="https://zahaba.my.id/ebook" @click="isMenuOpen = false" class="text-darkNavy font-semibold hover:text-white transition block">Ebook</a></li>
         </ul>
       </div>
     </div>
