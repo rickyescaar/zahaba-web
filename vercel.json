@@ -6,3 +6,12 @@
     }
   ]
 }
+{
+  "redirects": [
+    {
+      "source": "/ebook",
+      "destination": "https://zahaba.lynk.id",
+      "permanent": false
+    }
+  ]
+}
