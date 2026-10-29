@@ -1,17 +1,15 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
-}
-{
   "redirects": [
     {
       "source": "/ebook",
       "destination": "https://zahaba.lynk.id",
       "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
